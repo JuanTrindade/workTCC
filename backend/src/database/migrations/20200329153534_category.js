@@ -7,7 +7,7 @@ exports.up = function(knex) {
         table.decimal('telephone').notNullable();
         table.string('city').notNullable();
         table.string('uf', 2).notNullable();
-        table.string('imageCategory');
+        table.string('categoryImage');
     });
 };
 
