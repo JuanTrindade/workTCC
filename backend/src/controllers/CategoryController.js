@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async create(request, response){
-        const { title, description, telephone, city, uf} = request.body;
+        const { title, description, telephone, city, uf, categoryImage} = request.body;
         const id = crypto.randomBytes(4).toString('HEX');
         await connection('category').insert({
             id,
@@ -18,6 +18,7 @@ module.exports = {
             telephone,
             city,
             uf,
+            categoryImage
         })
         return response.json( { id } );
     }
